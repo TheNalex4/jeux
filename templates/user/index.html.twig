@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+  {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  {% endblock %}
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+    {% for message in app.flashes('message') %}
+        <h2 style="color: green;">{{ message }}</h2>
+    {% endfor %}
+<h1>Bonjour {{ user.firstName }}</h1>
+    <h2>voici vos informations:</h2>
+    <br><br>
+
+
+        <strong>prenom:</strong>
+        <div>{{ user.firstName}}</div>
+    <br>
+        <strong>nom:</strong>
+        <div>{{ user.lastName}}</div>
+    <br>
+    <strong>email:</strong>
+    <div>{{ user.email}}</div>
+
+    <br>
+    <strong>Date de naissance:</strong>
+    <div>{{ user.birthday|date("m/d/Y")}}</div>
+    <br><br>
+    <button type="submit" class="btn btn-success"><a id="mod" href="{{ path('app_modification') }}">modifier le profil</a></button>
+
+{% endblock %}

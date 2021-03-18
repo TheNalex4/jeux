@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Modification{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+{% endblock %}
+
+{% block body  %}
+    <h1>Modification de votre profil</h1>
+
+
+
+    {{ form_start(form) }}
+    <br>
+
+    <br>
+    {{ form_row(form.firstname, {'label':'Prénom','attr': {'placeholder':'Prénom...'}}) }}
+    <br>
+    {{ form_row(form.lastname, {'label':'Nom','attr': {'placeholder':'Nom...'}}) }}
+    <br>
+    {{ form_row(form.birthday, {'label':'Date de naissance','attr': {'placeholder':'Date de naissance'}}) }}
+    <br>
+    {{ form_row(form.password, {'label':'Mot de passe','attr': {'placeholder':'Mot de passe...'}})}}
+
+
+
+
+    <br><br>
+
+    {{ form_end(form) }}
+
+{% endblock %}
