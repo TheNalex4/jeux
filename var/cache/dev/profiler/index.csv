@@ -115,3 +115,13 @@ b9f2f8,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/ins
 64c29d,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/jeu/new-game,1616098210,,200
 faae37,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/logout,1616098212,,302
 51f4d0,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/,1616098212,,200
+e13a64,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/login,1616164926,,200
+14eb10,::1,POST,http://localhost/pasdequartier/pasdequartier/public/index.php/login,1616164933,,302
+b85bb8,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/profil/,1616164933,,200
+3a1882,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/modification,1616164943,,200
+ea4e83,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/inscription,1616488331,,200
+a1d0c3,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/login,1616488356,,200
+78e08d,::1,POST,http://localhost/pasdequartier/pasdequartier/public/index.php/login,1616488366,,302
+8ecb5c,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/profil/,1616488367,,200
+bbbfd6,::1,GET,http://localhost/pasdequartier/pasdequartier/public/index.php/modification,1616488370,,200
+9a4d8c,::1,POST,http://localhost/pasdequartier/pasdequartier/public/index.php/modification,1616488382,,200
