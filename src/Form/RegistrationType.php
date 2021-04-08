@@ -14,6 +14,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 
+
 class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)

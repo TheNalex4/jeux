@@ -1,20 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}PasDeQuartier!{% endblock %}
+
+{% block idpage %}accueil{% endblock %}
+
+{% block header %}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="flex">
+        <div class="cote1">
+            <p>
+                Bienvenue dans le monde des pirates. Vous faites parti de l’équipage
+                d’un célèbre pirate : Anne Bonny ou Jack Rackham. Connaissant
+                l’emplacement précis du trésors en mer, votre but est de le récupérer
+                avant l’autre équipage ! Attention, ce ne sera pas si facile; afin
+                d’obtenir le trésor vous allez devoir obtenir l’aide des sept monstres
+                des mers. Proposez leur les plus belles offrandes pour qu’ils soient à
+                vos côtés pour combattre l’autre l’équipage. Etes-vous prêts ?
+            </p>
+        </div>
+        <div class="cote2">
+            <video controls>
+                <source src="{{asset('img/animation.mp4')}}" type="video/mp4">
+                Désolé, votre navigateur ne supporte pas le format de la vidéo.
+            </video>
+            <div class="bouton">
+                <a href="#" class="bouton">Jouer maintenant</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/davidannebicque/htdocs/jeuS4/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/davidannebicque/htdocs/jeuS4/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% block footer %}
+    <footer>
+        <div class="logo">
+            <img src="{{asset('img/calicotlogo.svg')}}" alt="logo calicot">
+        </div>
+        <nav>
+            <a href="#">Site promotionnel</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Contact</a>
+            <a href="#">Admin</a>
+        </nav>
+        <div class="logo2">
+            <img src="{{asset('img/mmilogo.png')}}" alt="logo calicot">
+        </div>
+    </footer>
 {% endblock %}

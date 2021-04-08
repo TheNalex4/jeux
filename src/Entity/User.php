@@ -22,6 +22,12 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity=Stats::class,  cascade={"persist", "remove"})
+     * * @ORM\JoinColumn(nullable=true)
+     */
+    private $stats;
+
+    /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
@@ -66,6 +72,7 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity=Game::class, mappedBy="winner")
      */
     private $winners;
+
 
     public function __construct()
     {
@@ -285,4 +292,20 @@ class User implements UserInterface
     {
         return $this->firstname.' '.$this->lastname;
     }
+
+    public function getStats(): ?Stats
+    {
+        return $this->stats;
+    }
+
+    public function setStats($stats): void
+    {
+        $this->stats = $stats;
+    }
+
+    public function getStatsId(){
+        return $this->getStats()->getId();
+    }
+
+
 }

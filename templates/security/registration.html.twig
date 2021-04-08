@@ -1,39 +1,40 @@
 {% extends 'base.html.twig' %}
 {% block title %}Inscription{% endblock %}
 
-{% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+{% block idpage %}inscription{% endblock %}
+{% block classpage %}formulaire label{% endblock %}
 
-{% endblock %}
-
+{% block header2 %}{% endblock %}
 
 {% block body  %}
 <h1>Inscription pour le jeu</h1>
 
-    {{ form_start(form) }}
-    <br>
+{{ form_start(form) }}
+<div class="email input">
     {{ form_row(form.email, {'label for = imputEmail':'Adresse mail','attr': {'placeholder':'Adress email...'}}) }}
-
-
-    <br>
+</div>
+<div class="prenom input">
     {{ form_row(form.firstname, {'label':'Prénom','attr': {'placeholder':'Prénom...'}}) }}
-    <br>
+</div>
+<div class="nom input">
     {{ form_row(form.lastname, {'label':'Nom','attr': {'placeholder':'Nom...'}}) }}
-    <br>
+</div>
+<div class="naissance input">
     {{ form_row(form.birthday, {'label':'Date de naissance','attr': {'placeholder':'Date de naissance'}}) }}
-    <br>
+</div>
+<div class="psw input">
     {{ form_row(form.password, {'label':'Mot de passe','attr': {'placeholder':'Mot de passe...'}})}}
+</div>
+
+{{ form_end(form) }}
+
+<div class="bas">
+    <div class="requin">
+        <img src="{{asset('img/requin.svg')}}" alt="megalodon">
+    </div>
 
 
+</div>
 
-
-
-
-
-
-    <br><br>
-
-    {{ form_end(form) }}
 
 {% endblock %}

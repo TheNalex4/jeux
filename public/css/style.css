@@ -1,4 +1,371 @@
-#mod {
- text-decoration: none;
- color: white;
+@font-face {
+  font-family: "Revans Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("fonts/Revans Medium"), url("fonts/RevansMedium-7BEOK.woff") format("woff");
 }
+@font-face {
+  font-family: "Pirate Kids Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("fonts/Pirate Kids Regular"), url("fonts/Pirate Kids.woff") format("woff");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+}
+body#accueil {
+  background-image: url(../img/fondaccueil.jpg);
+  background-position: center;
+  font-family: "Pirate Kids Regular";
+}
+body#accueil header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+body#accueil header img {
+  width: 15vw;
+  height: auto;
+  margin: 20px;
+}
+body#accueil header span.co {
+  margin: 30px;
+}
+body#accueil header span.co a {
+  color: white;
+  text-decoration: none;
+  margin: 15px;
+}
+body#accueil main div.flex {
+  display: flex;
+}
+body#accueil main div.flex div.cote1 {
+  width: 60%;
+}
+body#accueil main div.flex div.cote1 p {
+  margin: 5%;
+}
+body#accueil main div.flex div.cote2 {
+  width: 40%;
+  margin-top: -200px;
+}
+body#accueil main div.flex div.cote2 video {
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+}
+body#accueil main div.flex div.cote2 div.bouton {
+  width: max-content;
+  height: 70px;
+  padding: 20px;
+  border-radius: 70px;
+  background-color: #5F493C;
+  margin: auto;
+}
+body#accueil main div.flex div.cote2 div.bouton a.bouton {
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+}
+body#accueil footer {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  opacity: 0.65;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+body#accueil footer div.logo {
+  width: 30%;
+}
+body#accueil footer div.logo img {
+  width: 35%;
+  margin: 20px;
+}
+body#accueil footer nav {
+  font-family: "Revans Medium";
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+body#accueil footer nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+body#accueil footer div.logo2 img {
+  width: 100px;
+  margin-right: 50px;
+}
+body.formulaire {
+  font-family: "Pirate Kids Regular";
+}
+body.formulaire#inscription form div:nth-child(6) {
+  display: grid;
+  grid-template-columns: 1fr 240px 300px;
+  text-align: left;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 70px;
+}
+body.formulaire#inscription form div:nth-child(6) input {
+  height: 100%;
+  font-size: 1.5em;
+  color: #9A7046;
+  font-family: "Pirate Kids Regular";
+  padding-left: 20px;
+}
+body.formulaire#login main {
+  padding-bottom: 50px;
+}
+body.formulaire#profil main {
+  padding-bottom: 150px;
+}
+body.formulaire#profil div.profil {
+  display: flex;
+  align-items: center;
+}
+body.formulaire#profil div.profil section {
+  width: 50%;
+  margin: auto;
+}
+body.formulaire#profil div.profil section.infos {
+  text-align: left;
+}
+body.formulaire#profil div.tableau {
+  margin: auto;
+  width: max-content;
+}
+body.formulaire#profil div.tableau div {
+  background-color: white;
+  color: #381C03;
+  width: 40vw;
+  height: 4vw;
+  display: flex;
+  margin: 50px;
+}
+body.formulaire#profil div.tableau div section {
+  border: 1px solid #707070;
+  width: 50%;
+  padding: 15px;
+}
+body.formulaire#profil div.bas {
+  text-align: right;
+}
+body.formulaire#profil div.bas div.lien {
+  bottom: 0;
+}
+body.formulaire#profil button {
+  width: max-content;
+  height: 50px;
+  border-radius: 70px;
+  background-color: #381C03;
+}
+body.formulaire#profil button a {
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+}
+body.formulaire.label form {
+  width: 70%;
+  margin: auto;
+}
+body.formulaire.label form div.input div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+body.formulaire.label form div.input.naissance {
+  margin-bottom: 30px;
+}
+body.formulaire.label form div.input.naissance div#registration_birthday {
+  width: 540px;
+  height: 70px;
+}
+body.formulaire.label form div.input.naissance div#registration_birthday select {
+  height: 70px;
+  padding-left: 20px;
+  font-size: 1.5em;
+  font-family: "Pirate Kids Regular";
+  color: #9A7046;
+}
+body.formulaire.label form div.input.naissance div#registration_birthday select#registration_birthday_day {
+  width: 108px;
+}
+body.formulaire.label form div.input.naissance div#registration_birthday select#registration_birthday_year {
+  margin-left: 20px;
+  width: 162px;
+}
+body.formulaire.label form div.input.naissance div#registration_birthday select#registration_birthday_month {
+  margin-right: 20px;
+  width: 270px;
+}
+body.formulaire.label form div.input.naissance div#registration_birthday select option {
+  font-size: 1.2em;
+}
+body.formulaire.label form div.input.naissance div#modification_birthday {
+  width: 540px;
+  height: 70px;
+}
+body.formulaire.label form div.input.naissance div#modification_birthday select {
+  height: 70px;
+  padding-left: 20px;
+  font-size: 1.5em;
+  font-family: "Pirate Kids Regular";
+  color: #9A7046;
+}
+body.formulaire.label form div.input.naissance div#modification_birthday select#modification_birthday_day {
+  width: 108px;
+}
+body.formulaire.label form div.input.naissance div#modification_birthday select#modification_birthday_year {
+  margin-left: 20px;
+  width: 162px;
+}
+body.formulaire.label form div.input.naissance div#modification_birthday select#modification_birthday_month {
+  margin-right: 20px;
+  width: 270px;
+}
+body.formulaire.label form div.input.naissance div#modification_birthday select option {
+  font-size: 1.2em;
+}
+body.formulaire div.main {
+  background-image: url(../img/fond.svg);
+  background-size: cover;
+  padding-bottom: 50px;
+}
+body.formulaire div.main header div#logo {
+  text-align: center;
+}
+body.formulaire div.main header div#logo a {
+  margin: auto;
+}
+body.formulaire div.main header div#logo a img {
+  width: 20vw;
+}
+body.formulaire div.main header div#lang {
+  text-align: right;
+}
+body.formulaire div.main header div#lang img.lang {
+  width: 50px;
+}
+body.formulaire div.main main {
+  background-color: #9A7046;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 300px;
+}
+body.formulaire div.main main form div.input input {
+  border: none;
+  width: 500px;
+  height: 70px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  color: #9A7046;
+  font-size: 1.5em;
+  font-family: "Pirate Kids";
+}
+body.formulaire div.main main form button {
+  font-family: "Pirate Kids Regular";
+  width: 400px;
+  color: white;
+  background-color: #381c03;
+  border: none;
+  height: 70px;
+  border-radius: 70px;
+  font-size: 1.5em;
+}
+body.formulaire div.main main div.bas {
+  width: 100%;
+}
+body.formulaire div.main main div.bas div.requin {
+  float: left;
+  position: relative;
+  left: -2%;
+}
+body.formulaire div.main main div.bas div.requin img {
+  height: 320px;
+}
+body.formulaire div.main main div.bas div.lien {
+  float: right;
+  bottom: -200px;
+  position: relative;
+}
+body.formulaire div.main main div.bas div.lien a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+body.formulaire div.main main div.bas div.lien a img {
+  width: 50%;
+}
+body.formulaire footer {
+  background-color: #381c03;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.formulaire footer div#logoCalicot {
+  width: 30%;
+  text-align: center;
+  margin: auto auto;
+}
+body.formulaire footer div#logoCalicot img {
+  width: 20vw;
+  margin: 5vh auto;
+}
+body.formulaire footer div#liens {
+  width: 70%;
+}
+body.formulaire footer div#liens ul#haut {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 0;
+}
+body.formulaire footer div#liens ul#haut li {
+  list-style-type: none;
+}
+body.formulaire footer div#liens ul#haut li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6em;
+}
+body.formulaire footer div#liens div#bas {
+  text-align: center;
+  font-size: 1.3em;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body.formulaire footer div#liens div#bas a.mentions {
+  color: white;
+}
+body.formulaire footer div#liens div#bas ul#RS {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  width: 15%;
+}
+body.formulaire footer div#liens div#bas ul#RS li {
+  list-style-type: none;
+}
+body.formulaire footer div#liens div#bas ul#RS li a img {
+  width: 3vw;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+}
+body.formulaire footer div#liens div#bas ul#RS li a img:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+/*# sourceMappingURL=style.css.map */

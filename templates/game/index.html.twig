@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
-{% block title %}Hello GameController!{% endblock %}
+{% block title %}Jouer ! {% endblock %}
 
 {% block body %}
 <form action="{{ path('create_game') }}" method="post">
@@ -21,4 +21,18 @@
     <button type="submit">Commencer la partie</button>
 
 </form>
+
+    <h1>Reprendre une partie</h1>
+    <div  id="jeux">
+        {% for game in en_cours %}
+        <p>Crée le {{ game.created | date("m/d/Y") }}</p>
+        {% if game.user1.id == app.user.id %}
+        <p>{{ game.user2.firstName }} {{ game.user2.lastName }}</p>
+      {% else %}
+        <p>{{ game.user1.firstName }} {{ game.user1.lastName }}</p>
+        {% endif %}
+        <a href="{{ path('show_game',{game: game.id}) }}">Reprendre</a>
+    </div>
+ {% endfor %}
+
 {% endblock %}

@@ -13,6 +13,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use App\Entity\User;
+use App\Entity\Stats;
+
 
 
 class SecurityController extends AbstractController
@@ -55,6 +57,15 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted()&& $form->isValid()){
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
+            $stats = new Stats();
+            $stats->setDefaites(0);
+            $stats->setVictoires(0);
+            $stats->setParties(0);
+            $stats->setPartieEnCour(0);
+            $stats->setPartieTermine(0);
+            $manager->persist($stats);
+            $manager->flush();
+            $user->setStats($stats);
             $manager->persist($user);
             $manager->flush();
 
