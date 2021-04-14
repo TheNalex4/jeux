@@ -47,7 +47,7 @@ class GameController extends AbstractController
         }
         return $this->render('game/index.html.twig', [
             'users' => $users,
-            'game' => $game,
+            'game' => $games,
             'en_cours' =>$games
 
         ]);
