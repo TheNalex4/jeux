@@ -367,5 +367,73 @@ body.formulaire footer div#liens div#bas ul#RS li a img:hover {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
 }
+body#newgame main {
+  padding-bottom: 50px;
+}
+body#newgame main div.choix {
+  margin-bottom: 30px;
+}
+body#newgame main div.choix select#user2 {
+  font-size: 1.2em;
+  border: none;
+  color: #381c03;
+}
+body#newgame main table {
+  text-align: center;
+  background-color: burlywood;
+  width: 80%;
+  margin: auto;
+  border: 3px solid white;
+}
+body#newgame main table thead {
+  color: #9A7046;
+}
+body#newgame main table tbody td {
+  border: 3px solid white;
+  background-color: #9A7046;
+}
+body#newgame main table tbody td a {
+  color: #d79b0d;
+}
+body.plateau {
+  background-image: url(../img/fondaccueil.jpg);
+  background-position: left;
+}
+body.plateau div.cartes_plateau {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+body.plateau div.cartes_adversaire {
+  margin-bottom: 15px;
+  padding-top: 5px;
+}
+body.plateau div.cartes_moi {
+  padding-top: 5px;
+}
+body.plateau div.cartes_adversaire, body.plateau div.cartes_moi {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body.plateau div.cartes_adversaire div.cartes_actions, body.plateau div.cartes_moi div.cartes_actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 20%;
+}
+body.plateau div.cartes_adversaire div.cartes_actions button.actions, body.plateau div.cartes_moi div.cartes_actions button.actions {
+  width: 45% !important;
+}
+body.plateau div.cartes_adversaire div.cartes_actions button.actions img, body.plateau div.cartes_moi div.cartes_actions button.actions img {
+  width: 95%;
+}
+body.plateau div#message {
+  position: fixed;
+  bottom: 5px;
+  text-align: center;
+  width: 100%;
+  font-size: 1.4em;
+}
 
 /*# sourceMappingURL=style.css.map */
