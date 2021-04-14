@@ -1,14 +1,19 @@
-{% extends 'base2.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Jouer ! {% endblock %}
+
+{% block idpage %}newgame{% endblock %}
+{% block classpage %}formulaire{% endblock %}
+
+{% block header2 %}{% endblock %}
 
 {% block body %}
 <form action="{{ path('create_game') }}" method="post">
     <div>
-        Moi
+
     </div>
 
-    <div>
+    <div class="choix">
         <label for="user2">Contre :</label>
         <select name="user2" id="user2">
             <option value="">Choisir le joueur 2</option>
@@ -23,8 +28,8 @@
 </form>
 
     <h1>Reprendre une partie</h1>
-    <div  id="jeux">
-        {% for game in en_cours %}
+    {# {% for game in en_cours %}
+    <div  class="jeux">
         <p>Crée le {{ game.created | date("m/d/Y") }}</p>
         {% if game.user1.id == app.user.id %}
         <p>{{ game.user2.firstName }} {{ game.user2.lastName }}</p>
@@ -33,6 +38,27 @@
         {% endif %}
         <a href="{{ path('show_game',{game: game.id}) }}">Reprendre</a>
     </div>
- {% endfor %}
+ {% endfor %} #}
+
+    <table>
+        <thead>
+            <th>Créée le</th>
+            <th>Adversaire</th>
+            <th>Reprendre la partie</th>
+        </thead>
+        <tbody>
+            {% for game in en_cours %}
+                <tr>
+                    <td>{{ game.created | date("m/d/Y") }}</td>
+                    {% if game.user1.id == app.user.id %}
+                    <td>{{ game.user2.firstName }} {{ game.user2.lastName }}</td>
+                    {% else %}
+                    <td>{{ game.user1.firstName }} {{ game.user1.lastName }}</td>
+                    {% endif %}
+                    <td><a href="{{ path('show_game',{game: game.id}) }}">Reprendre</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}

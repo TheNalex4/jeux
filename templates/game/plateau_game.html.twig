@@ -1,100 +1,63 @@
-<div class="row">
+<div class="cartes_adversaire">
     <div class="col-8">
-        Cartes de l'adversaire
         {% for card in adversaire.handCards %}
-            <img style="width:50px" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
+            <img style="width:7vw" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
         {% endfor %}
-
-        {% if adversaire.actions['SECRET'] ==true %}
-            <div style="...">
-                <img style="width: 50px;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
-
-            </div>
-
-        {% endif %}
-
-
-        {% if adversaire.actions['DEPOT'] ==true %}
-            <div style="...">
-
-                <br><br>
-                <img style="width: 20px;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
-                <img style="width: 20px;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
-
-
-
-            </div>
-
-        {% endif %}
     </div>
-    <div class="col-4">
-        Actions de l'adversaire
-        <button id="">Secret</button>
-        <button  id="">Depot</button>
-        <button  id="">Offre</button>
-        <button  id="">Echange</button><br>
+    {% if adversaire.actions['SECRET'] ==true %}
+        <div>
+            <img style="width: 7vw;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
+        </div>
+    {% endif %}
+    {% if adversaire.actions['DEPOT'] ==true %}
+        <div>
+            <img style="width: 7vw;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
+            <img style="width: 7vw;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
+        </div>
+    {% endif %}
+    <div class="cartes_actions">
+        <button class="actions">Secret <img src="{{ asset('cartes/jetons/secretv.png') }}" alt=""></button>
+        <button  class="actions">Depot <img src="{{ asset('cartes/jetons/depotv.png') }}" alt=""></button>
+        <button  class="actions">Offre <img src="{{ asset('cartes/jetons/offrev.png') }}" alt=""></button>
+        <button  class="actions">Echange <img src="{{ asset('cartes/jetons/echangev.png') }}" alt=""></button><br>
     </div>
 </div>
-<div class="row">
-    Plateau adversaire
+<div class="cartes_plateau">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_1.png') }}">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_2.png') }}">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_3.png') }}">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_4.png') }}">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_5.png') }}">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_6.png') }}">
+    <img style="width:13vw" src="{{ asset('cartes/plateau/carte_plateau_7.png') }}">
 </div>
-<div class="row">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_1.png') }}">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_2.png') }}">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_3.png') }}">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_4.png') }}">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_5.png') }}">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_6.png') }}">
-    <img style="width:100px" src="{{ asset('cartes/plateau/carte_plateau_7.png') }}">
-
-</div>
-<div class="row">
-    Mon plateau
-</div>
-<div class="row">
-    <div class="col-8">
+<div class="cartes_moi">
+    <div class="cartes_jouer">
         {% for card in moi.handCards %}
-            <img style="width:50px" src="{{ asset('cartes/main/'~cards[card].picture) }}">
-
+            <img style="width:7vw" src="{{ asset('cartes/main/'~cards[card].picture) }}">
             <input type="checkbox" name="carte_secret" value="{{ card }}"
                    style="display: none"
                    class="choixSecret">
-
-
         {% endfor %}
-
-
     </div>
-
     {% if moi.actions['SECRET'] ==true %}
-        <div style="...">
-            <img style="width: 50px;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
-
+        <div class="carte_secret">
+            <img style="width: 7vw;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
         </div>
-
-        {% endif %}
-
-
-    {% if moi.actions['DEPOT'] ==true %}
-        <div style="...">
-
-            <br><br>
-            <img style="width: 20px;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
-            <img style="width: 20px;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
-
-
-
-        </div>
-
     {% endif %}
-    <div class="col-4">
-        Mes Actions
-        <button id="secret">Secret</button>
-        <button  id="depot">Depot</button>
-        <button  id="offre">Offre</button>
-        <button  id="echange">Echange</button><br>
-        <button id="valider" style="display: none">Valider action</button>
-        <button id="finDeTour" disabled>Fin de tour</button>
+    {% if moi.actions['DEPOT'] ==true %}
+        <div class="cartes_depot">
+            <img style="width: 7vw;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
+            <img style="width: 7vw;" src="{{ asset('cartes/dos/do_des_cartes.png') }}">
+        </div>
+    {% endif %}
+    <div class="cartes_actions">
+        <button id="secret" class="actions">Secret <img src="{{ asset('cartes/jetons/secret.png') }}" alt=""></button>
+        <button  id="depot" class="actions">Depot <img src="{{ asset('cartes/jetons/depot.png') }}" alt=""></button>
+        <button  id="offre" class="actions">Offre <img src="{{ asset('cartes/jetons/offre.png') }}" alt=""></button>
+        <button  id="echange" class="actions">Echange <img src="{{ asset('cartes/jetons/echange.png') }}" alt=""></button><br>
+        <button id="valider" style="display: none" class"bouton">Valider action</button>
+        <button id="finDeTour" disabled class"bouton">Fin de tour</button>
     </div>
 </div>
 

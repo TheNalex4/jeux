@@ -25,7 +25,7 @@
                 Désolé, votre navigateur ne supporte pas le format de la vidéo.
             </video>
             <div class="bouton">
-                <a href="#" class="bouton">Jouer maintenant</a>
+                <a href="{{ path('new_game') }}" class="bouton">Jouer maintenant</a>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
             <a href="#">Site promotionnel</a>
             <a href="#">Mentions légales</a>
             <a href="#">Contact</a>
-            <a href="#">Admin</a>
+            <a href="{{ path('admin') }}">Admin</a>
         </nav>
         <div class="logo2">
             <img src="{{asset('img/mmilogo.png')}}" alt="logo calicot">

@@ -33,9 +33,11 @@
     </header>
 {% endblock %}
 
+
+
 <div class="main">
     {% block header %}
-        <header>    
+        <header>
             <div class="animate__animated animate__fadeInDown" id="lang">
                 <a href="#">
                     <img src="{{ asset('img/anglais.svg') }}" class="lang" alt="Passer en anglais">
@@ -48,9 +50,9 @@
             </div>
         </header>
     {% endblock %}
-    
-    
-    
+
+
+
     <main class="container">
         {% block body %}{% endblock %}
     </main>
@@ -77,7 +79,7 @@
                     <li><a href="https://www.youtube.com/channel/UCaEg-PG8iznMI2U2QZnr3hA"><img src="{{asset('img/youtube.svg')}}" alt="youtube"></a></li>
                     <li><a href="https://www.facebook.com/cali.cot.75"><img src="{{asset('img/facebook.svg')}}" alt="facebook"></a></li>
                 </ul>
-            </div>                
+            </div>
         </div>
     </footer>
 {% endblock %}
